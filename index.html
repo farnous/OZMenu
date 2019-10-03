@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FELZY MENU</title>
+
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer>
+
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+
+    <!-- Preloader -->
+    <div id="status">
+    <img src="http://www.ozlounge.com/website/images/felzy-main-logo.png" width="150">
+    <br>
+    <!-- Loading bar -->
+    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    </div>
+
+    <nav>
+        <div class="logo">
+            <a href=""><img src="http://www.ozlounge.com/website/images/nav-logo-4-hover.png"></a>
+        </div>
+    </nav>
+
+
+    <div id="category">
+        <ul>
+            <!-- <li></li> -->
+            <!-- <div class="sp"> </div> -->
+        </ul>
+    </div>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+    $(window).on('load', function() { // makes sure the whole site is loaded
+      //$('#status').fadeOut(); // will first fade out the loading animation
+      $('#status').delay(150).fadeOut('slow'); // will fade out the white DIV that covers the website.
+      $('body').delay(100).css({'overflow':'visible'});
+    })
+</script>
+</body>
+</html>

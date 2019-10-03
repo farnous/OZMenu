@@ -1,0 +1,27 @@
+اقسام 
+-- اطباق
+---- تفاصيل الطبق
+
+
+       images
+	/category
+	/dishes
+	
+Data:
+category = [
+	{url : "", title : "", image : ""},
+	{url : "", title : "", image : ""} 
+];
+
+dishes = [
+	{title : "", price : "", image : "", description : ""},
+	{title : "", price : "", image : "", description : ""},
+]
+
+
+
+functions :
+
+function setCategoty(catIndex){
+	//create an image element with class and set the src attr
+}
