@@ -1,40 +1,31 @@
-/*
-اقسام
--- اطباق
----- تفاصيل الطبق
 
-
-       images
-    /category
-    /dishes
-*/
 //Data:
-const categories = [
-    {url : "soup", title : "Soup", image : "images/category/soup.png"},
-    {url : "starter", title : "Starters", image : "images/category/starters.png"},
-    {url : "leaf", title : "LEAF LOVERS", image : "images/category/leaf.png"},
-    {url : "sushi", title : "FROM THE SUSHI CORNER", image : "images/category/sushi.png"},
-    {url : "pasta", title : "PASTAS", image : "images/category/pasta.png"},
-    {url : "pizza", title : "PIZZA", image : "images/category/pizza.png"},
-    {url : "risotto", title : "RISOTTO", image : "images/category/risotto.png"},
-    {url : "burger", title : "SANDWICHES & BURGERS", image : "images/category/burger.png"},
-    {url : "sliders", title : "SLIDER'S", image : "images/category/sliders.png"},
-    {url : "signature", title : "OUR SIGNATURE", image : "images/category/signature.png"},
-    {url : "steak-seafood", title : "Fire-Grilled Steaks & Sea Food", image : "images/category/steak.png"},
-    {url : "dessert", title : "FELZY DESSERT", image : "images/category/dessert.png"},
-];
+// const categories = [
+//     {url : "soup", title : "Soup", image : "images/category/soup.png"},
+//     {url : "starter", title : "Starters", image : "images/category/starters.png"},
+//     {url : "leaf", title : "LEAF LOVERS", image : "images/category/leaf.png"},
+//     {url : "sushi", title : "FROM THE SUSHI CORNER", image : "images/category/sushi.png"},
+//     {url : "pasta", title : "PASTAS", image : "images/category/pasta.png"},
+//     {url : "pizza", title : "PIZZA", image : "images/category/pizza.png"},
+//     {url : "risotto", title : "RISOTTO", image : "images/category/risotto.png"},
+//     {url : "burger", title : "SANDWICHES & BURGERS", image : "images/category/burger.png"},
+//     {url : "sliders", title : "SLIDER'S", image : "images/category/sliders.png"},
+//     {url : "signature", title : "OUR SIGNATURE", image : "images/category/signature.png"},
+//     {url : "steak-seafood", title : "Fire-Grilled Steaks & Sea Food", image : "images/category/steak.png"},
+//     {url : "dessert", title : "FELZY DESSERT", image : "images/category/dessert.png"},
+// ];
 
-const dishes = [
-    {
-      title : "Ginger Pumpkin Bisque",
-      category : "soup", price : "", image : "",
-      description : "Butternut Squash with Pumpkin Seed and Sage, Caramelized Ginger "
-    },
-    {title : "Wild Mushroom Cappuccino", category : "soup", price : "", image : "", description : "Mix of Wild Mushroom Toped with White Truffle Foam "},
-    {title : "Grand Mama", category : "soup", price : "", image : "", description : "Homemade Chicken Soup Recipe "},
-    {title : "Tom Yum", category : "soup", price : "", image : "", description : "Thai Hot & Sour, Sea Bass, Prawns, Vermicelli, Mushroom Wine Tomato"},
-    {title : "Gyoza ", category : "", price : "", image : "", description : "Lightly Pan Fried or Steamed Chicken Dumplings with Shanghai Sauce"},
-]
+// const dishes = [
+//     {
+//       title : "Ginger Pumpkin Bisque",
+//       category : "soup", price : "", image : "",
+//       description : "Butternut Squash with Pumpkin Seed and Sage, Caramelized Ginger "
+//     },
+//     {title : "Wild Mushroom Cappuccino", category : "soup", price : "", image : "", description : "Mix of Wild Mushroom Toped with White Truffle Foam "},
+//     {title : "Grand Mama", category : "soup", price : "", image : "", description : "Homemade Chicken Soup Recipe "},
+//     {title : "Tom Yum", category : "soup", price : "", image : "", description : "Thai Hot & Sour, Sea Bass, Prawns, Vermicelli, Mushroom Wine Tomato"},
+//     {title : "Gyoza ", category : "", price : "", image : "", description : "Lightly Pan Fried or Steamed Chicken Dumplings with Shanghai Sauce"},
+// ]
 
 
 
@@ -69,7 +60,13 @@ function addSpace() {
 //show category
 function showCategory(){
     categories.forEach(cat => {
-        createBox(`<a href="category.html?m=${cat.url}"><h2>${cat.title}</h2></a>`, `background: url(${cat.image}) 50% 50% no-repeat; background-size: cover`);
+        let content = `
+          <a href="category.html?m=${cat.url}">
+            <div class="testdiv" style="background: url(${cat.image}) 50% 50% no-repeat; background-size: cover">
+            </div>
+            <h2>${cat.title}</h2>
+          </a>`;
+        createBox(content);
     });
     addSpace()
 }
@@ -83,7 +80,13 @@ function showCategory(){
 function showDishes(cat){
     let cdished = dishes.filter ( dish => dish.category === cat)
     cdished.forEach(dish => {
-        createBox(`${dish.title}`)
+        let content = `
+            <div class="testdiv" style="background: url(images/${dish.image}) 50% 50% no-repeat; background-size: cover">
+            </div>
+            <h2>${dish.title}</h2>
+            <p>${dish.description}</p>
+          `;
+        createBox(content)
         console.log(dish);
     });
     addSpace();
